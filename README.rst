@@ -18,7 +18,6 @@ Machine Learning Based Ransom C2C Detector.
 
 
 * Free software: MIT license
-* Documentation: https://ransom-c2c-detector.readthedocs.io.
 
 
 Features

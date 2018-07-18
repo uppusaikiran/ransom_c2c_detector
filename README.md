@@ -166,3 +166,9 @@ Features
 
 * TODO
 
+TODO
+--------
+
+* Write a brief in Readme explaining how model works.
+* Show the detection Accuracy. 
+

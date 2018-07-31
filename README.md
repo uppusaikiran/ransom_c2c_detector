@@ -46,18 +46,15 @@ Installing setuptools, pip, wheel...done.
 * To make the model,navigate to the project root and run the script.As this creation of model takes long time,a generated model is already included.
 
 ```
-/tmp/dummy/ransom_c2c_detector
  % cd ransom_c2c_detector
 admin@root /tmp/dummy/ransom_c2c_detector/ransom_c2c_detector
- % ls
-data.csv  __init__.py  model.plk  model.py  ransom_c2c_detector.py  utils
 admin@root /tmp/dummy/ransom_c2c_detector/ransom_c2c_detector
  % python ransom_c2c_detector.py
  ```
 ### ▶️ Run the Predictor Script which helps in predicting unknown urls
 
 ```
- python predictor.py
+ python predictor.py 
 [*]Prediction for url gwbgmsmhgsp.com --> [1]
 [*]Prediction for url facebook.com --> [0]
 [*]Prediction for url fklafkaaaassf.com --> [1]

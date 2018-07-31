@@ -12,6 +12,7 @@ import os
 import logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
 class URLModel(object):
     """URLModel"""
     def __init__(self):
@@ -151,5 +152,4 @@ def test_model_with_new_record():
 
 
 if __name__ == '__main__':
-    #make_model()
     test_model_with_new_record()

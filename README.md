@@ -2,6 +2,10 @@
 
 Machine Learning Based Ransom C2C URL/Domain Detector.
 
+[![Language](https://img.shields.io/badge/Python-2.7-blue.svg?style=plastic&colorB=68B7EB)]()
+[![License](https://img.shields.io/github/license/vhesener/Closures.svg?style=plastic&colorB=68B7EB)]()
+[![Release](https://img.shields.io/github/release/vhesener/Closures.svg?style=plastic&colorB=68B7EB)]()
+
 **Ransom C2C Detector!** helps in finding the on-fly generated domains while ransomware infections:
 
 * Easy to Generate New Model apt to requirements.

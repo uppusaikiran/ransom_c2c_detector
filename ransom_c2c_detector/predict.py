@@ -10,6 +10,8 @@ from ransom_c2c_detector import RansomC2CDetector
 import sys
 import os
 import logging
+import argparse
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
@@ -150,6 +152,39 @@ def test_model_with_new_record():
         res = m.pred(data)
         print '[*]Prediction for url {} --> {}'.format(domain_list[i],res)
 
+def test_model(domain):
+    """
+    Function Uses the generated model to predict the rating for domain.
+    """
+    data = {}
+    m = URLModel()
+    m.get_model('model.plk')
+    c2 = RansomC2CDetector()
+    c2.create_corpus()
+    domain_name = domain
+    full_domain = domain_name.lower()
+    domain_name = c2.clean_url(full_domain).replace('$','')
+    ent = c2.entropy(domain_name)
+    c2.calculate_bigrams(domain_name)
+    c2.calculate_trigrams(domain_name)
+    bi_score = c2.bigram_score(domain_name)
+    tri_score= c2.trigram_score(domain_name)
+    c2.trigram_score_old(domain_name)
+    trigram_benign = c2.trigram_benign
+    trigram_malicious = c2.trigram_malicious
+    data = [ent,bi_score,tri_score,trigram_benign,trigram_malicious]
+    res = m.pred(data)
+    data["domain"] = domain
+    data["rating"] = res
+    data["enropy"] = ent
+    data["bigram_score"] = bi_score
+    data["trigram_score"] = tri_score
+    return data
 
 if __name__ == '__main__':
-    test_model_with_new_record()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("domain",
+                    help="Submit a domain to Predict its rating.")
+    args = parser.parse_args()
+    output = test_model(args.domain)
+    print output

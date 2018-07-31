@@ -39,7 +39,8 @@ class RansomC2CDetector(object):
                 self.mal_trigrams = pickle.load(f)
 
         except Exception as e:
-            print 'Something wrong {}'.format(e)
+            print 'Model is not generated.Exiting'
+            sys.exit(1)
     def entropy(self,domain):
         """entropy
 

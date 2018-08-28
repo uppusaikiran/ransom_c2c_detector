@@ -96,4 +96,4 @@ TODO
 
 * Write a brief in Readme explaining how model works.
 * Show the detection Accuracy. 
-
+* Decrease the time for model-building and prediction.(Top Priority)
